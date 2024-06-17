@@ -1,0 +1,21 @@
+﻿@using WebApplication1.Models
+@model Form
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+</head>
+<body>
+    <form action="/submit" method="post">
+        @foreach (var field in Model.Fields)
+        {
+            <div>
+                <label>@field.Name</label>
+                <input type="@field.Type" , required="@field.IsRequired" />
+            </div>
+        }
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
